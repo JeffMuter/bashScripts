@@ -18,9 +18,9 @@ if ! tmux has-session -t blog 2>/dev/null; then
     # Create a second window
     tmux new-window -t blog:1
     
-    # Navigate to a specific directory in the second window
+    # This creates a new window, and pulls & pushes to github, to keep things in sync before editing
     tmux rename-window -t blog:1 'terminal'
-    tmux send-keys -t blog:1 'cd repos/go/saorsadev-blog' C-m
+    tmux send-keys -t blog:1 'cd ~/repos/saorsadev-blog' C-m
     tmux send-keys -t blog:1 'git add .' C-m
     tmux send-keys -t blog:1 'git commit -m "tmux startup commit for pull before editing"' C-m
     tmux send-keys -t blog:1 'git pull origin master' C-m
