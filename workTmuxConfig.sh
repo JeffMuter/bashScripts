@@ -11,6 +11,7 @@ if ! tmux has-session -t work 2>/dev/null; then
     tmux new-session -d -s work
     # First window: Run node script
     tmux send-keys -t work:0 'tmux rename-window watcher' C-m
+    tmux send-keys -t work:0 'cd ~/repos/cloudinaryFileSync/src/watcher' C-m
     tmux send-keys -t work:0 'node ~/repos/cloudinaryFileSync/src/watcher/watcher.js' C-m
     # Create a second window
     tmux new-window -t work:1
