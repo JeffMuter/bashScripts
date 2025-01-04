@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Check if tmux is already running
 if ! tmux has-session 2>/dev/null; then
